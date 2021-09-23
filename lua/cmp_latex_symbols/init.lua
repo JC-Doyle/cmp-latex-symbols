@@ -6,6 +6,10 @@ source.new = function()
   return setmetatable({}, { __index = source })
 end
 
+source.is_available = function()
+  return vim.o.filetype == 'markdown' or vim.o.filetype == 'latex'
+end
+
 source.get_trigger_characters = function()
   return { "\\" }
 end
